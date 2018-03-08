@@ -13,6 +13,7 @@ class Star {
 
 	update() {
 		this.z -= speed;
+		this.prevZ = this.z + sq(maxSpeed) / 2;
 
 		if (this.z < 1) {
 			this.x = random(-width, width);
