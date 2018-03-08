@@ -3,15 +3,21 @@
 
 const STAR_COUNT = 400;
 var stars = [];
+var discoMode = false;
 var canvas;
 
 function setup() {
 	canvas = createCanvas(400, 400);
 	canvas.parent('container');
+	colorMode(HSB);
 
 	for (var i = 0; i < STAR_COUNT; i++) {
 		stars[i] = new Star();
 	}
+
+	canvas.mouseClicked(function() {
+		discoMode = !discoMode;
+	});
 }
 
 function draw() {

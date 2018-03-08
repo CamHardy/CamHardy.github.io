@@ -1,13 +1,16 @@
 // Star.js
 'use strict';
 
-const speed = 5;
+const speed = 10;
 
 class Star {
 	constructor() {
 		this.x = random(-width, width);
 		this.y = random(-height, height);
 		this.z = random(width);
+		this.prevZ = this.z;
+
+		this.hue = random(0, 360);
 	}
 
 	update() {
@@ -17,6 +20,7 @@ class Star {
 			this.x = random(-width, width);
 			this.y = random(-height, height);
 			this.z = width + random(0, width / 2);
+			this.prevZ = this.z;
 		}
 	}
 
@@ -24,7 +28,17 @@ class Star {
 		let sceneX = map(this.x / this.z, 0, 1, 0, width / 2);
 		let sceneY = map(this.y / this.z, 0, 1, 0, height / 2);
 
-		fill(255);
-		ellipse(sceneX, sceneY, 4, 4);
+		let r = map(this.z, 0, 1.5 * width, 4, 0, true);
+		let c;
+		discoMode ? c = color(this.hue, 255, 255) : c = color(0, 0, 255);
+
+		let prevX = map(this.x / this.prevZ, 0, 1, 0, width / 2);
+		let prevY = map(this.y / this.prevZ, 0, 1, 0, height / 2);
+		this.prevZ = this.z;
+
+		fill(c);
+		stroke(c);
+		ellipse(sceneX, sceneY, r, r);
+		line(sceneX, sceneY, prevX, prevY);
 	}
 }
