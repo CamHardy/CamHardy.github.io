@@ -3,7 +3,7 @@ var renderFrames;
 var recording = false;
 
 function setupGif(frames) {
-	resizeCanvas(400, 400);
+	//resizeCanvas(400, 400);
 
 	gif = new GIF({
 		workers: 2,
@@ -30,7 +30,7 @@ function drawGif() {
 	}
 }
 
-function keyPressed() {
+function keyPressedGif() {
 	// press g to start the capture
 	if (keyCode == 71) {
 		console.log('recording started');

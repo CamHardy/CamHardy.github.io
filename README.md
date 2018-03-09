@@ -23,6 +23,12 @@ Put this in draw():
 drawGif();
 ```
 
+Put this in keyPressed():
+
+```javascript
+keyPressedGif();
+```
+
 Status messages will be logged to the console. The finished gif will open in a new tab. Ad blockers are eager to kill it, consider turning them off. Sometimes the rendering step can be slow, just give it a moment.
 
 <!-- TODO: add instructions for three.js and phaser.js -->
