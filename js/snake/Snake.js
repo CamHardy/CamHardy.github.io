@@ -3,19 +3,24 @@
 
 class Snake {
 	constructor() {
-		this.x = 0;
-		this.y = 0;
+		this.x = floor(width / grid / 2);
+		this.y = floor(height / grid / 2);
 		this.setDir(1, 0);
 	}
 
 	update() {
-		this.x = constrain(this.x + this.xSpeed * grid, 0, width - grid - 1);
-		this.y = constrain(this.y + this.ySpeed * grid, 0, height - grid - 1);
+		this.x = constrain(this.x + this.xSpeed, 0, floor(width / grid) - 1);
+		this.y = constrain(this.y + this.ySpeed, 0, floor(height / grid) - 1);
 	}
 
 	show() {
 		fill(255);
-		rect(this.x, this.y, grid, grid);
+		rect(this.x * grid, this.y * grid, grid, grid);
+	}
+
+	eat(food) {
+		let distance = dist(this.x, this.y, food.x, food.y);
+		return (distance < 1);
 	}
 
 	setDir(x, y) {

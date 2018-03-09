@@ -1,20 +1,30 @@
+// main.js
+'use strict';
+
 var canvas;
 var snake;
 var food;
 var grid = 10;
 
 function setup() {
-	canvas = createCanvas(400, 400);
+	canvas = createCanvas(401, 401);
 	canvas.parent('container');
 	frameRate(10);
 
 	snake = new Snake();
+	food = new Food();
 }
 
 function draw() {
 	background(51);
+
+	food.show();
 	snake.update();
 	snake.show();
+
+	if (snake.eat(food)) {
+		food = new Food();
+	}
 }
 
 function keyPressed() {
