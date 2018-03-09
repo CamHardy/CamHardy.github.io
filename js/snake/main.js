@@ -4,7 +4,7 @@
 var canvas;
 var snake;
 var food;
-var grid = 10;
+var grid = 20;
 
 function setup() {
 	canvas = createCanvas(401, 401);
@@ -28,16 +28,16 @@ function draw() {
 }
 
 function keyPressed() {
-	if (keyCode === UP_ARROW) {
+	if (keyCode === UP_ARROW && snake.ySpeed != 1) {
 		snake.setDir(0, -1);
 	}
-	else if (keyCode === DOWN_ARROW) {
+	else if (keyCode === DOWN_ARROW && snake.ySpeed != -1) {
 		snake.setDir(0, 1);
 	}
-	else if(keyCode === LEFT_ARROW) {
+	else if(keyCode === LEFT_ARROW && snake.xSpeed != 1) {
 		snake.setDir(-1, 0);
 	}
-	else if(keyCode === RIGHT_ARROW) {
+	else if(keyCode === RIGHT_ARROW && snake.xSpeed != -1) {
 		snake.setDir(1, 0);
 	}
 }

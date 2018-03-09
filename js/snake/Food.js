@@ -3,8 +3,8 @@
 
 class Food {
 	constructor() {
-		this.x = floor(random(width) / grid);
-		this.y = floor(random(height) / grid);
+		this.x = floor(random(width - 1) / grid);
+		this.y = floor(random(height - 1) / grid);
 	}
 
 	show() {
