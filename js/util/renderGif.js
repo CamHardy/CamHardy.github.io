@@ -2,7 +2,7 @@ var gif;
 var renderFrames;
 var recording = false;
 
-function setupGif(canvas, frames) {
+function setupGif(frames) {
 	resizeCanvas(400, 400);
 
 	gif = new GIF({
@@ -17,15 +17,15 @@ function setupGif(canvas, frames) {
 	});
 }
 
-function drawGif(canvas) {
+function drawGif() {
 	if (recording && renderFrames > 0) {
-		gif.addFrame(canvas.elt, {delay: 1, copy: true});
+		gif.addFrame(document.getElementsByTagName('CANVAS')[0], {delay: 1, copy: true});
 		console.log('added frame');
 		renderFrames--;
 	}
 	if (recording && renderFrames == 0) {
 		recording = false;
-		console.log('begining render...');
+		console.log('beginning render...');
 		gif.render();
 	}
 }

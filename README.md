@@ -14,13 +14,13 @@ If using p5.js:
 Put this in setup() (this will resize the canvas to 400x400):
 
 ```javascript
-setupGif(your_canvas, num_frames_rendered);
+setupGif(num_frames_rendered);
 ```
 
 Put this in draw():
 
 ```javascript
-drawGif(your_canvas);
+drawGif();
 ```
 
 Status messages will be logged to the console. The finished gif will open in a new tab. Ad blockers are eager to kill it, consider turning them off. Sometimes the rendering step can be slow, just give it a moment.
