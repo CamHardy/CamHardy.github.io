@@ -1,5 +1,5 @@
 var gif;
-var renderFrames;
+var renderFrames = -1;
 var recording = false;
 
 function setupGif(frames) {
@@ -18,12 +18,22 @@ function setupGif(frames) {
 }
 
 function drawGif() {
-	if (recording && renderFrames > 0) {
+	if (recording) {
 		gif.addFrame(document.getElementsByTagName('CANVAS')[0], {delay: 1, copy: true});
 		console.log('added frame');
 		renderFrames--;
+		if (renderFrames == 0) {
+			gifStop();
+		}
 	}
-	if (recording && renderFrames == 0) {
+}
+
+function startGif() {
+	recording = true;
+}
+
+function stopGif() {
+	if (recording) {
 		recording = false;
 		console.log('beginning render...');
 		gif.render();
@@ -33,7 +43,7 @@ function drawGif() {
 function keyPressedGif() {
 	// press g to start the capture
 	if (keyCode == 71) {
+		gifStart();
 		console.log('recording started');
-		recording = true;
 	}
 }

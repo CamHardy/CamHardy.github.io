@@ -11,13 +11,13 @@ Put this in the html header:
 
 If using p5.js:
 
-Put this in setup() (this will resize the canvas to 400x400):
+Put this at the bottom of setup() (optional argument num_frames_rendered will only render a set amount of frames, otherwise infinite until stopped):
 
 ```javascript
 setupGif(num_frames_rendered);
 ```
 
-Put this in draw():
+Put this at the bottom of draw():
 
 ```javascript
 drawGif();
@@ -28,6 +28,8 @@ Put this in keyPressed():
 ```javascript
 keyPressedGif();
 ```
+
+Put ``startGif()`` and ``endGif()`` wherever appropriate to start and stop rendering, respectively.
 
 Status messages will be logged to the console. The finished gif will open in a new tab. Ad blockers are eager to kill it, consider turning them off. Sometimes the rendering step can be slow, just give it a moment.
 
@@ -43,4 +45,4 @@ Status messages will be logged to the console. The finished gif will open in a n
 * add functionality to the prev/next sketch buttons
 * add score/gui to snake
 * make space-invaders less sucky (fix bullet flickering, add enemy behavior)
-* adding sound effects to some of these sketches might be cool also (use p5.sound)
+* adding sound effects to some of these sketches might be cool (use p5.sound)
