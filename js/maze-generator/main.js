@@ -55,7 +55,7 @@ function draw() {
 		current_cell = next_cell;
 	}
 	else if (stack.length > 0) {
-		current_cell = stack.pop();
+		current_cell = stack.shift();
 		current_cell.onStack = false;
 	}
 }

@@ -13,6 +13,7 @@ function setupGif(frames) {
 	renderFrames = frames;
 
 	gif.on('finished', function(blob) {
+		console.log('render complete, opening a new window...');
 		window.open(URL.createObjectURL(blob));
 	});
 }

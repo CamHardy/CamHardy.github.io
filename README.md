@@ -45,4 +45,5 @@ Status messages will be logged to the console. The finished gif will open in a n
 * add functionality to the prev/next sketch buttons
 * add score/gui to snake
 * make space-invaders less sucky (fix bullet flickering, add enemy behavior)
+* extend maze-generator into the 3rd dimension!
 * adding sound effects to some of these sketches might be cool (use p5.sound)
