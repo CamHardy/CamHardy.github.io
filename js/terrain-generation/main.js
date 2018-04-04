@@ -5,17 +5,19 @@ window.onload = function () {
 	// set the scene size
 	var WIDTH = 600;//window.innerWidth;
 	var HEIGHT = 600;//window.innerHeight;
+	var SCALE = 20;
 
 	const FRAMERATE = 10; // three.js clamps this to a max of 60
 
 	// set perspective camera attributes
-	const VIEW_ANGLE = 45;
+	const VIEW_ANGLE = 75;
 	var ASPECT = WIDTH / HEIGHT;
 	const NEAR = 0.1;
 	const FAR = 10000;
 
 	// create a scene with a camera and renderer
 	const scene = new THREE.Scene();
+	scene.background = new THREE.Color(0x515151);
 	const camera = new THREE.PerspectiveCamera(
 		VIEW_ANGLE,
 		ASPECT,
@@ -36,17 +38,20 @@ window.onload = function () {
 
 	// add the camera and a light source to the scene
 	camera.position.z = 100;
+	console.log(camera.position);
 	scene.add(camera);
 
 	var geometry = new THREE.Geometry();
+	//geometry.matrixAutoUpdate = false;
+	//geometry.updateMatrix();
 
 	geometry.vertices.push(
 		new THREE.Vector3(-30, 35, 0 ),
-		new THREE.Vector3(-20, -20, 0 ),
+		new THREE.Vector3(-20, -35, 0 ),
 		new THREE.Vector3(-10, 35, 0 ),
-		new THREE.Vector3(0, -20, 0 ),
+		new THREE.Vector3(0, -35, 0 ),
 		new THREE.Vector3(10, 35, 0 ),
-		new THREE.Vector3(20, -20, 0 ),
+		new THREE.Vector3(20, -35, 0 ),
 		new THREE.Vector3(30, 35, 0 ),
 		);
 	geometry.faces.push(
@@ -70,7 +75,14 @@ window.onload = function () {
 	// UPDATE LOOP
 
 	function update() {
-		
+		for (let y = 0; y < HEIGHT; y += SCALE) {
+			// begin shape
+			for (let x = 0; x < WIDTH; x += SCALE) {
+				// push verticies here
+				// also push faces
+			}
+			// end shape
+		}
 	}
 
 	function render() {
