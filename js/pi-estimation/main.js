@@ -29,9 +29,6 @@ function setup() {
 	ellipse(0, 0, r * 2, r * 2);
 
 	strokeWeight(1);
-
-	setupGif(200);
-	startGif();
 }
 
 function draw() {
@@ -68,6 +65,4 @@ function draw() {
 	textAlign(CENTER)
 	text('Closest approximation: ' + closestPi.toFixed(15), 0, -10);
 	text('Current approximation: ' + estPi.toFixed(15), 0, 10);
-
-	drawGif();
 }
