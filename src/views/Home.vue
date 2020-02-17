@@ -1,6 +1,6 @@
 <template>
   <div class="home hero is-light is-fullheight-with-navbar bg-img">
-    <vue-p5 @sketch="sketch"></vue-p5>
+<!--    <vue-p5 @sketch="sketch"></vue-p5>-->
     <div class="hero-body has-text-centered">
       <div class="container">
         <div class="title section is-paddingless">Hello.</div>
@@ -13,6 +13,12 @@
             <a href="https://www.linkedin.com/in/cameron-hardy-26845a157/">
               <i class="fab fa-linkedin"></i>
               <p class="heading">LinkedIn</p>
+            </a>
+          </div>
+          <div class="level-item has-text-centered">
+            <a href="https://codepen.io/camhardy">
+              <i class="fab fa-codepen"></i>
+              <p class="heading">CodePen</p>
             </a>
           </div>
           <div class="level-item has-text-centered">

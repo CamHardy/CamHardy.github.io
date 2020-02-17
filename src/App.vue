@@ -5,7 +5,7 @@
         <div class="navbar-item is-paddingless" v-on:click="showNav = false">
           <router-link class="navbar-item" to="/" style="font-family: 'Dosis', sans-serif; font-size: 30px;">
             <img src="../public/favicon-32x32.png" style="padding-right:10px;">
-            <div>{{ name }}</div>
+            <div style="padding-bottom: 1px">{{ name }}</div>
           </router-link>
         </div>
         <div class="navbar-burger burger" v-on:click="showNav = !showNav" v-bind:class="{ 'is-active' : showNav}">
@@ -44,7 +44,7 @@
         pages: [
           {name: 'Projects', route: '/projects'},
           {name: 'Resume', route: '/resume'},
-          {name: 'About', route: '/about'}
+          {name: 'Contact', route: '/contact'}
         ],
         showNav: false
       }

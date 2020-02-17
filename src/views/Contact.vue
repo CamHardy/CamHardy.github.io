@@ -1,12 +1,12 @@
 <template>
-    <div class="resume hero is-warning is-bold is-fullheight-with-navbar">
+    <div class="contact hero is-success is-bold is-fullheight-with-navbar">
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    Resume
+                    Contact
                 </h1>
                 <h2 class="subtitle">
-                    What are you waiting for? Hire me. Or don't. Up to you I guess...
+                    Gimme a hoot, ya hear?
                 </h2>
             </div>
         </div>
